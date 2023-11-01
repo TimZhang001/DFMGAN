@@ -105,6 +105,10 @@ If you find DFMGAN helpful to your research, please cite our paper:
 }
 ```
 
+
+// 1. Regarding the issue of generating temporary files, it would be better to change it to "with tempfile.TemporaryDirectory(None, None, args.run_dir) as temp_dir:" to avoid any potential problems caused by default generation in /tmp.
+// 2. When running the code, some .so files are generated in /raid/ubuntu/.cache/torch_extensions. If different versions of PyTorch are used, these files may become locked and cause the program to hang indefinitely.
+
 ## Acknowledgements
 
 - The work was supported by the National Science Foundation of China (62076162), and the Shanghai Municipal Science and Technology Major/Key Project, China (2021SHZDZX0102, 20511100300).
